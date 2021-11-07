@@ -18,7 +18,7 @@ export class Sweetalert2Service {
     }
 
 
-    show(typee, text) {
+    show(typee: any, text: any) {
       const Toast = Swal.mixin({
         toast: true,
         position: 'center',

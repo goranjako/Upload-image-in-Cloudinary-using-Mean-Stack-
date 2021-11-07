@@ -12,9 +12,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NavbarComponent } from './index/navbar/navbar.component';
 import { NotFoundComponent } from './index/not-found/not-found.component';
 import { Interceptor } from './auth/interceptor';
-import { CommonModule } from '@angular/common';
+
 import { RegisterComponent } from './auth/register/register.component';
 import { LoginComponent } from './auth/login/login.component';
+
 
 
 @NgModule({
@@ -25,9 +26,10 @@ import { LoginComponent } from './auth/login/login.component';
     NotFoundComponent,
     RegisterComponent,
     LoginComponent
+
   ],
   imports: [
-    CommonModule,
+
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
