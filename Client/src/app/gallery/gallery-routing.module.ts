@@ -6,8 +6,8 @@ import { AddphotoComponent } from './addphoto/addphoto.component';
 import { GalleryComponent } from './gallery.component';
 
 const routes: Routes = [
-  { path: '', component: GalleryComponent },
-  { path: 'addphoto', component: AddphotoComponent },
+  { path: '', component: GalleryComponent, },
+  { path: 'addphoto', component: AddphotoComponent,},
 ];
 
 @NgModule({

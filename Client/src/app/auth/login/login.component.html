@@ -1,44 +1,73 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="card hoverable rounded col-md-6 col-sm-12 m-auto">
+      <form
+        [formGroup]="validationForm"
+        (ngSubmit)="onSubmit(validationForm.value)"
+        class="p-5 rounded"
+      >
+        <div class="text-center">
+          <h4 class="card-title w-100 font-weight-bold">Sign in</h4>
+        </div>
 
-<div class="container mt-5 ">
-  <div class="row ">
-    <div class="card hoverable rounded col-md-6 col-sm-12 m-auto ">
-      <form [formGroup]="validationForm " (ngSubmit)="onSubmit(validationForm.value)" class="p-5 rounded">
-              <div class=" text-center">
-                      <h4 class="card-title w-100 font-weight-bold">Sign in</h4></div>
-                      <a [routerLink]="[ '/gallery' ]" routerLinkActive="active">name</a>
         <div class="md-form">
           <i class="fa fa-envelope prefix"></i>
-          <input mdbInput  formControlName="email"  type="email"
-                 class="form-control" id="form6">
+          <input
+            mdbInput
+            formControlName="email"
+            type="email"
+            class="form-control"
+            id="form6"
+          />
           <label for="form6">Type your e-mail</label>
-          <mdb-error *ngIf="email?.invalid && (email?.dirty || email?.touched)">Input invalid</mdb-error>
-          <mdb-success *ngIf="email?.valid && (email?.dirty || email?.touched)">Input valid</mdb-success>
+          <mdb-error *ngIf="email?.invalid && (email?.dirty || email?.touched)"
+            >Input invalid</mdb-error
+          >
+          <mdb-success *ngIf="email?.valid && (email?.dirty || email?.touched)"
+            >Input valid</mdb-success
+          >
         </div>
 
         <div class="md-form">
           <i class="fa fa-lock prefix"></i>
-          <input mdbInput  formControlName="password"  type="password" class="form-control" id="form10">
+          <input
+            mdbInput
+            formControlName="password"
+            type="password"
+            class="form-control"
+            id="form10"
+          />
           <label for="form10">Type your password</label>
-          <mdb-error *ngIf="password?.invalid && (password?.dirty || password?.touched)">Input invalid
+          <mdb-error
+            *ngIf="password?.invalid && (password?.dirty || password?.touched)"
+            >Input invalid
           </mdb-error>
-          <mdb-success *ngIf="password?.valid && (password?.dirty || password?.touched)">Input valid
+          <mdb-success
+            *ngIf="password?.valid && (password?.dirty || password?.touched)"
+            >Input valid
           </mdb-success>
         </div>
-        <div class="text-center" >
-         <!-- Sign in button -->
-    <button mdbBtn  ="true" type="button"  class="button-p button2"  [disabled]="!validationForm.valid"    mdbWavesEffect type="submit">Sign in</button>
-        <div class="text-center ">
-            <p>Not a member?
-                <a  [routerLink]="['/register']" ><b>Register</b></a>
-              </p>
-
-
-        </div>
+        <div class="text-center">
+          <!-- Sign in button -->
+          <button
+            mdbBtn="true"
+            type="button"
+            class="button-p button2"
+            [disabled]="!validationForm.valid"
+            mdbWavesEffect
+            type="submit"
+          >
+            Sign in
+          </button>
+          <div class="text-center">
+            <p>
+              Not a member?
+              <a [routerLink]="['/register']" routerLinkActive="active"><b>Register</b></a>
+              
+            </p>
+          </div>
         </div>
       </form>
-
+    </div>
+  </div>
 </div>
-</div>
-</div>
-
-

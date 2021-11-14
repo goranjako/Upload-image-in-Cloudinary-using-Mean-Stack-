@@ -47,7 +47,7 @@ export class RegisterComponent implements OnInit {
       res => {
         this.loading.hide();
         this.toast.show('success', res.message);
-        this.router.navigate(['/login']);
+        this.router.navigate(['gallery']);
         this.validationForm.reset();
 
       },

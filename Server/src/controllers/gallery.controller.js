@@ -31,7 +31,7 @@ class GalleryController {
       const photo = {
         id: req.body.id,
         image: image.url,
-        categories: req.body.categories,
+        title: req.body.title,
         cloudinary_id: image.public_id,
       };
       //cloudinary.v2.uploader.destroy(public_id, options, callback);
