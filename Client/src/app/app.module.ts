@@ -1,7 +1,7 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { NgxSpinnerModule } from 'ngx-spinner';
+import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,10 +12,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NavbarComponent } from './index/navbar/navbar.component';
 import { NotFoundComponent } from './index/not-found/not-found.component';
 import { Interceptor } from './auth/interceptor';
-
+import { LightboxModule } from 'ngx-lightbox';
 import { RegisterComponent } from './auth/register/register.component';
 import { LoginComponent } from './auth/login/login.component';
-
+import { NgImageSliderModule } from 'ng-image-slider';
 
 
 @NgModule({
@@ -29,11 +29,12 @@ import { LoginComponent } from './auth/login/login.component';
 
   ],
   imports: [
-
+    NgxGalleryModule,
     BrowserModule,
+    LightboxModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-     NgxSpinnerModule, MDBBootstrapModule.forRoot(), SweetAlert2Module.forRoot(),
+    MDBBootstrapModule.forRoot(), SweetAlert2Module.forRoot(),NgImageSliderModule,
     FormsModule, ReactiveFormsModule, HttpClientModule,
     JwtModule.forRoot({
       config: {
@@ -45,6 +46,7 @@ import { LoginComponent } from './auth/login/login.component';
     })
   ],
   providers: [ { provide: HTTP_INTERCEPTORS, useClass: Interceptor, multi: true }],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class AppModule { }

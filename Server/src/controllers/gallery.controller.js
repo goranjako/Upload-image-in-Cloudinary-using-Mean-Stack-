@@ -15,7 +15,7 @@ const storage = new CloudinaryStorage({
 export const upload = multer({ storage: storage });
 
 const params = {
-  folder: "Gallery",
+  folder: "Galleryss",
   allowedFormats: ["jpg", "png", "gif"],
   transformation: [{ width: 400, height: 400, crop: "limit" }],
 };
@@ -36,7 +36,7 @@ class GalleryController {
       };
       //cloudinary.v2.uploader.destroy(public_id, options, callback);
       const obj = await GalleryService.addImage(photo);
-      return res.json(obj);
+      return res.json({  success: true,msg:"Image uploaded successfully"});
     } catch (error) {
       return res.status(400).json(error.message);
     }

@@ -19,10 +19,10 @@
             type="file"
             class="form-control"
             id="form2"
-            (change)="onImageChange($event)"
-          />
-          <div class="preview" *ngIf="imgFile">
-            <img [src]="imgFile" style="width: 80px; height: 80px" />
+            (change)="onChange($event)">
+
+          <div class="preview" *ngIf="imageUrl">
+            <img [src]="imageUrl" style="width: 80px; height: 80px" />
           </div>
           <mdb-error *ngIf="file?.invalid && (file?.dirty || file?.touched)"
             >Input invalid
