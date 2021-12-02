@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
       this.loading.show();
       this.log.login(f).subscribe(
       res => {
-        this.router.navigate(['/profile']);
+        this.router.navigate(['gallery']);
         this.toast.show('success','You are successfully logged in');
         this.validationForm.reset();
         this.loading.hide();

@@ -2,6 +2,6 @@ export interface User {
   username?: string;
   email?: string;
   password?: string;
-  message: string;
+  message?: string;
   sucess: boolean;
 }

@@ -39,7 +39,7 @@ var upload = (0, _multer["default"])({
 });
 exports.upload = upload;
 var params = {
-  folder: "Gallery",
+  folder: "Galleryss",
   allowedFormats: ["jpg", "png", "gif"],
   transformation: [{
     width: 400,
@@ -76,7 +76,7 @@ var GalleryController = /*#__PURE__*/function () {
                 photo = {
                   id: req.body.id,
                   image: image.url,
-                  categories: req.body.categories,
+                  title: req.body.title,
                   cloudinary_id: image.public_id
                 }; //cloudinary.v2.uploader.destroy(public_id, options, callback);
 
@@ -85,7 +85,10 @@ var GalleryController = /*#__PURE__*/function () {
 
               case 9:
                 obj = _context.sent;
-                return _context.abrupt("return", res.json(obj));
+                return _context.abrupt("return", res.json({
+                  success: true,
+                  msg: "Image uploaded successfully"
+                }));
 
               case 13:
                 _context.prev = 13;

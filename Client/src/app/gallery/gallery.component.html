@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="s sticky-top" title="Add Photo">
+    <a class="" [routerLink]="['/gallery/addphoto']" routerLinkActive="active"
+      ><img
+        src="../../assets/icons/—Pngtree—image upload icon photo upload_5279796.png"
+        width="80px"
+        alt="...Upload"
+    /></a>
+  </div>
+  <div class="row ">
+    <div class="col m-2 "> 
+      <a>
+        <img
+          class="img-thumbnail img-fluid z-depth-1 rounded mt-2 ml-2"
+          *ngFor="let item of items | async; trackBy: trackBy; let i = index"
+          [src]="item.image"
+          title="{{ item.title }}"
+          (click)="slike(item)"
+        />
+      </a>
+    </div>
+  </div>
+</div>

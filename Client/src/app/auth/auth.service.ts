@@ -8,10 +8,11 @@ import jwt_decode from "jwt-decode";
 import { retry, catchError } from 'rxjs/operators';
 import { environment } from 'src/environments/environment.prod';
 
+
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type': 'application/json',
-   
+
   })
 };
 
@@ -23,12 +24,12 @@ export class AuthService {
   constructor(private http: HttpClient, private toast: Sweetalert2Service) {
     this.apiURL = environment.api;}
 
-  register(user): Observable<User> {
+  register(user:User): Observable<User> {
     return this.http.post<User>(this.apiURL +'/register', user);
   }
 
 
-  login(authCredentials) {
+  login(authCredentials: any) {
     return this.http.post<any>(this.apiURL +'/login', authCredentials)
         .pipe(map(user => {
             // login successful if there's a jwt token in the response
@@ -40,7 +41,7 @@ export class AuthService {
         }));
 }
 
-getUser(id): Observable<any> {
+getUser(id:any): Observable<any> {
   return this.http.get<any>(this.apiURL +'/user' + id)
   .pipe(
     retry(1),
@@ -56,8 +57,8 @@ logout() {
 
 
 getToken() {
-  const token = localStorage.getItem('token');
-  const decode = jwt_decode(token);
+   const token = localStorage.getItem('token');
+  const decode = jwt_decode(token!);
   return decode;
 
 }
@@ -66,7 +67,7 @@ public isLoggedIn() {
 
 }
 
-errorHandl(error) {
+errorHandl(error: { error: string; status: any; message: any; }) {
   let errorMessage = '';
   if (error instanceof ErrorEvent) {
     // Get client-side error

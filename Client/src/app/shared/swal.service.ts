@@ -18,19 +18,17 @@ export class Sweetalert2Service {
     }
 
 
-    show(typee, text) {
-      const Toast = Swal.mixin({
-        toast: true,
+    show(typee:any, msg:any) {
+       Swal.fire({
         position: 'center',
         showConfirmButton: false,
         timer: 4000,
-        width: 400
+        width: 400,
+        icon: typee,
+        title: msg
 
       });
-      Toast.fire({
-        icon: typee,
-        title: text
-      });
+
     }
 
 }

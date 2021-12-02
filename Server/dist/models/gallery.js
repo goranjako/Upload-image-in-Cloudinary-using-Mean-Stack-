@@ -15,7 +15,7 @@ var GallerySchema = new Schema({
     type: String,
     required: true
   },
-  categories: {
+  title: {
     type: String,
     required: true
   },

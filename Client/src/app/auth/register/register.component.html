@@ -8,32 +8,33 @@
                       <i class="fa fa-user prefix"></i>
                       <input mdbInput  formControlName="fullName" minLength="8"  type="text" class="form-control" id="form9">
                       <label for="form9">Type your fullName</label>
-                      <mdb-error *ngIf="fullName.invalid && (fullName.dirty || fullName.touched)">Input invalid</mdb-error>
-                      <mdb-success *ngIf="fullName.valid && (fullName.dirty || fullName.touched)">Input valid</mdb-success>
+                      <mdb-error *ngIf="fullName?.invalid && (fullName?.dirty || fullName?.touched)">Input invalid</mdb-error>
+                      <mdb-success *ngIf="fullName?.valid && (fullName?.dirty || fullName?.touched)">Input valid</mdb-success>
                     </div>
         <div class="md-form">
           <i class="fa fa-envelope prefix"></i>
           <input mdbInput  formControlName="email"  type="email"
                  class="form-control" id="form6">
           <label for="form6">Type your e-mail</label>
-          <mdb-error *ngIf="email.invalid && (email.dirty || email.touched)">Input invalid</mdb-error>
-          <mdb-success *ngIf="email.valid && (email.dirty || email.touched)">Input valid</mdb-success>
+          <mdb-error *ngIf="email?.invalid && (email?.dirty || email?.touched)">Input invalid</mdb-error>
+          <mdb-success *ngIf="email?.valid && (email?.dirty || email?.touched)">Input valid</mdb-success>
         </div>
 
         <div class="md-form">
           <i class="fa fa-lock prefix"></i>
           <input mdbInput  formControlName="password" type="password" class="form-control" id="form10">
           <label for="form10">Type your password</label>
-          <mdb-error *ngIf="password.invalid && (password.dirty || password.touched)">Input invalid
+          <mdb-error *ngIf="password?.invalid && (password?.dirty || password?.touched)">Input invalid
           </mdb-error>
-          <mdb-success *ngIf="password.valid && (password.dirty || password.touched)">Input valid
+          <mdb-success *ngIf="password?.valid && (password?.dirty || password?.touched)">Input valid
           </mdb-success>
         </div>
         <div class="text-center">
           <button mdbBtn   type="button"  class="button-p button2"  [disabled]="!validationForm.valid"    mdbWavesEffect type="submit">Sign up</button>
 
         </div>
-      </form>  
+      </form>
+     
 
 </div>
 </div>
