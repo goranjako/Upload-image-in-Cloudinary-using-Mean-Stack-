@@ -4,8 +4,8 @@ import multer from "multer";
 import GalleryService from "../services/gallery.service";
 
 cloudinary.config({
-  cloud_name: "goran",
-  api_key: "347353919781489",
+  cloud_name: "******",
+  api_key: "*** your key****",
   api_secret: "9zIoxCx6DNflw27IuzgWk84lzK0",
 });
 const storage = new CloudinaryStorage({
@@ -15,7 +15,7 @@ const storage = new CloudinaryStorage({
 export const upload = multer({ storage: storage });
 
 const params = {
-  folder: "Galleryss",
+  folder: "Gallery",
   allowedFormats: ["jpg", "png", "gif"],
   transformation: [{ width: 400, height: 400, crop: "limit" }],
 };
